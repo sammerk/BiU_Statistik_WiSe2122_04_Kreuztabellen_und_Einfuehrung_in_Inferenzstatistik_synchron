@@ -1,0 +1,275 @@
+---
+title: "Vorlesung"
+subtitle: "Statistik"
+author: "Samuel Merk"
+date: " `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      navigation:
+        scroll: false
+        click: false
+        touch: true
+editor_options: 
+  chunk_output_type: console
+---
+class: center,  middle, hide_logo
+
+
+<head>
+<script src="https://kit.fontawesome.com/994a28441d.js" crossorigin="anonymous"></script>
+</head>
+
+<!--<div class="my-footer"><span>Folien CC-BY verfügbar unter https://atelier-phka-merk-2020.netlify.app</span></div> 
+
+
+<style>
+.remark-slide-number {
+  font-size: 10pt;
+  margin-bottom: -11.6px;
+  margin-right: 10px;
+  color: red; /* white */
+  opacity: 0; /* default: 0.5 */
+}
+</style>
+--> 
+
+```{r xaringan-themer, echo=F, warning=FALSE}
+library(xaringanthemer)
+library(fontawesome)
+library(xaringanExtra)
+
+extra_css <- list(
+  ".cit"  = list("font-size" = "70%",
+                 "color" = "#6AEE3E90"),
+  ".em05" = list("font-size" ="0.5em"),
+  ".em06" = list("font-size" ="0.6em"),
+  ".em07" = list("font-size" ="0.7em"),
+  ".em08" = list("font-size" ="0.8em"),
+  ".em09" = list("font-size" ="0.9em"),
+  ".em11" = list("font-size" ="1.1em"),
+  ".em12" = list("font-size" ="1.2em"),
+  ".em13" = list("font-size" ="1.3em"),
+  ".em14" = list("font-size" ="1.4em"),
+  ".em15" = list("font-size" ="1.5em"),
+  ".em16" = list("font-size" ="1.6em"),
+  ".em17" = list("font-size" ="1.7em"),
+  ".em18" = list("font-size" ="1.8em"),
+  ".em19" = list("font-size" ="1.9em"),
+  ".bold" = list("font-weight" = "bold"),
+  ".large" = list("font-size" = "160%"),
+  ".vertmiddle" = list("vertical-align" ="middle"),
+  #".lh15" = list("line-height" =  "1.5"),
+  ".li" = list("line-height" =  "1.5",
+               "font-size" = "160%",
+               "font-weight" = "bold"),
+  ".phgreen" = list("color" = "#50B32E"),
+  ".phgreenlight" = list("color" = "#62DC3A"),
+  ".pgl" = list("color" = "#62DC3A"),
+  ".phg" = list("color" = "#8cd000"),
+ # ".my-footer" = list("background-color" = "#1a1917",
+ #                     "position" = "absolute",
+ #                     "bottom" = "0px",
+ #                     "left" = "0px",
+ #                     "height" = "20px",
+ #                     "width" = "100%"),
+  ".my-footer span" = list("font-size" = "10pt", 
+                           "color" = "#F7F8FA",
+                           "position" = "absolute",
+                           "left" = "15px",
+                           "bottom" = "2px"),
+  ".remark-slide-number" = list("bottom" = "-18px"),
+  ".li" = list("line-height" =  "4"),
+  ".scroll-box-18" = list("height" ="18em",
+                           "overflow-y" = "scroll"),
+  ".scroll-box-23" = list("height" ="23em",
+                           "overflow-y" = "scroll"),
+  ".hscroll-box-30" = list("width" ="23em",
+                           "overflow-x" = "scroll"))
+
+style_mono_accent_inverse(
+  base_color = "#8cd000",
+  white_color = "#FFFFFF",
+  black_color = "#272822",
+  extra_css = extra_css)
+
+library(xaringanExtra)
+use_logo(
+  image_url = "https://apps.samuel-merk.de/data/PHK_2018_Logo_V1_FARBE_NUR_PH.svg",
+  width = "80px",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
+
+use_editable(expires = 1)
+```
+
+
+.phg[
+# Vorlesung:
+
+<i class="fas fa-microscope fa-7x"></i>
+
+### Statistik
+---  
+.em14[Samuel Merk | PH Karlsruhe]]  
+
+
+
+---
+## Was habe ich heute vor?
+* FAQ zu Aufgaben und Videos
+* Vertiefende Elaboration
+    * Beispiele
+    * JASP-User-Guide
+    
+.pull-left[
+### Non-<i class="fab fa-r-project"></i>-Users
+* Angeleitete Software-Übung zu Binomial- und $\chi^2$-Test
+* Freie Software-Übung zu Binomial- und $\chi^2$-Test
+* Association Plots
+    * Genese derer mit Flex-Plot-Modul
+    * Guessing von Cramer's V anhand der Plots]
+
+.pull-right[
+### <i class="fab fa-r-project"></i>-Users
+* Summary Tables 
+    * mit `dplyr::summarise()` und
+    * `dplyr::group_by()`
+* Freie Software-Übung zu Binomial- und $\chi^2$-Test
+* Association und Mosaic Plots
+    * Genese derer mit `{flexplot}`
+    * Guessing von Cramer's V anhand der Plots
+]
+
+---
+class: hide_logo
+
+## Ihre Fragen zu Video und Aufgaben
+> Bitte stellen Sie Ihre Fragen zum Video und den Aufgaben unter https://bit.ly/merk015 und voten Sie die Fragen Ihrer Kommiliton\*innen.
+
+&nbsp;
+
+```{r, out.width="30%", fig.align='center', echo = F, message = F}
+library(qrencoder)
+par(mar=c(0,0,0,0))
+image(qrencode_raster("https://bit.ly/merk015"), 
+      asp=1, col=c("#000000", "#62DC3A"), axes=FALSE, 
+      xlab="", ylab="", bg = 'transparent')
+```
+
+---
+class: hide_logo 
+## Gemeinsame Aufgabe: Palmer Penguins <img src="https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png" width="150" align="right">
+
+> Forschungsfrage: Wie artenspezifisch (Species: `Adelie`, `Chinstrap`, `Gentoo`), ist die Besiedelung der Inseln `Biscoe`, `Dream` und `Torgersen`? 
+
+* Skizzieren Sie auf einem Schmierzettel 
+    * eine Kreuztabelle aus `Species vs. Island` die für eine hochgradig artenspezifische Inselbesiedelung (a.k.a. großes Cramér's V) spricht und
+    * eine Kreuztabelle aus `Species vs. Island` die für eine absolut artenunspezifische Inselbesiedelung (a.k.a. Cramér's V = 0) spricht. Berücksichtigen Sie dabei die folgenden »Randverteilungen«:
+```{r, warning=FALSE, message=FALSE}
+library(palmerpenguins)
+table(penguins$island)
+table(penguins$species)
+```
+
+---
+## De Facto Artenspezifität der Besiedelung
+```{r}
+table(penguins$island, penguins$species)
+DescTools::CramerV(penguins$island, penguins$species)
+```
+
+---
+### Gemeinsame Aufgabe: Death Penalty (aus JASP library)
+```{r, echo = F, eval=FALSE}
+data_death_penalty <- 
+  tibble(Race_Victim = c(rep("white", 53+414+11+37), rep("black", 0+16+4+139)),
+         Race_Defendant = c(rep("white",53),
+                            rep("white",414),
+                            rep("black",11),
+                            rep("black",37),
+                            rep("white",0),
+                            rep("white",16),
+                            rep("black",4),
+                            rep("black",139)),
+         Death = c(rep("yes",53),
+                   rep("no",414),
+                   rep("yes",11),
+                   rep("no",37),
+                   rep("yes",0),
+                   rep("no",16),
+                   rep("yes",4),
+                   rep("no",139)))
+
+#haven::write_sav(data_death_penalty, "data_death_penalty.sav")
+
+DescTools::CramerV(data_death_penalty$Death, data_death_penalty$Race_Victim)
+```
+Der Datensatz `r xfun::embed_file("data_death_penalty.sav", "data_death_penalty.sav", 'data_death_penalty.sav')` stammt aus der JASP Data Library (Wagenmakers & Kucharský, 2020) und wird dort wie folgt beschrieben:
+
+<i>This data set, "Death Penalty", provides court decisions on a death penalty (i.e., yes or no) split by race of a defendant (i.e., White or Black) and race of the victim (i.e., White or Black).
+
+Variables:
+
+* Race_Victim - Race of the victim (white, black).
+* Race_Defendant - Race of the defendant (white, black).
+* Death - The court decision on the death penalty (yes = death penalty, no = no deatch penalty).
+
+References:
+Radelet, M. L., and Pierce, G. L. (1991). Choosing those who will die: Race and the death penalty in Florida. Florida Law Review, 43: 1-34.</i>
+
+> Arbeitsauftrag: Untersuchen Sie die Abhängigkeit aller möglichen Variablenpaare (Death - Race_Victim; Death - Race_Defendant; Race_Defendant - Race_Victim)
+
+---
+# Predicting the Future
+Wir werden in einem Experiment testen, inwiefern Sie in der Lage sind die Zukunft vorherzusagen (Ergebnis eines Münzwurfs) 😉.
+
+> Forschungsfrage: Können Studierende des Studiengangs Biodiversität und Umwelt vorhersagen ob eine Münze als nächstes Kopf oder Zahl zeigt?
+
+
+.can-edit[
+#### Vorgehen:
+1. ...
+2. ...
+3. ...
+]
+
+---
+## Offene Arbeitsaufträge
+### Vorab: JASP-Guide
+```{r, echo = F, fig.align='center', fig.cap='<i class="fas fa-external-link-alt"></i> https://jasp-stats.org'}
+knitr::include_url("https://jasp-stats.org/wp-content/uploads/2020/11/Statistical-Analysis-in-JASP-A-Students-Guide-v14-Nov2020.pdf")
+```
+
+
+---
+## Offene Arbeitsaufträge
+
+.pull-left[
+### Non-<i class="fab fa-r-project"></i>-Users
+.em08[
+* Laden Sie den Querschnittsdatensatz, das Codebook und den Fragebogen des [<i class="fas fa-external-link-alt"></i> ALLBUS 2018 (Vollversion, aber nicht Kumulation)](https://www.gesis.org/allbus/download/download-querschnitte) herunter (Registrierung notwendig, wir werden den Datensatz aber noch oft nutzen)
+* Untersuchen Sie selbstgewählte Fragestellungen zum Binomial- und $\chi^2$-Test indem
+    * Sie Effektstärken berechnen und diese inferenzstatistisch absichern
+    * Verschriftlichen Sie Ihre Forschungsfrage in einem aufbereiteten JASP-/jamovi-Dokument und ergänzen Sie diese um eine verschriftlichte Interpretation der Ergebnisse (gerne nach dem Vorbild im JASP User Guide)
+* Installieren Sie das Visual Modelling Module in JASP bzw. das Flexplot Module in jamovi unter Plotten Sie Ihre Fragestellungen damit
+* Klicken Sie auf "Visually Guessing Cramér's V" in moodle und üben Sie V aus den Plots abzuschätzen]]
+
+.pull-right[
+### <i class="fab fa-r-project"></i>-Users
+.em08[
+* Laden Sie den Querschnittsdatensatz, das Codebook und den Fragebogen des [<i class="fas fa-external-link-alt"></i> ALLBUS 2018 (Vollversion, aber nicht Kumulation)](https://www.gesis.org/allbus/download/download-querschnitte) herunter (Registrierung notwendig, wir werden den Datensatz aber noch oft nutzen)
+* Üben Sie das Erstellen von Kreuz- und Pivottabellen mittels `dplyr::group_by()` und `dplyr::summarise()` zunächst in [diesem interaktiven Tutorial](https://rstudio.cloud/learn/primers/2.3)
+* Untersuchen Sie selbstgewählte Fragestellungen zum Binomial- und $\chi^2$-Test indem
+    * Sie Kreuztabellen via `dplyr::group_by()` und `dplyr::summarise()` generieren, für diese Effektstärken berechnen und diese inferenzstatistisch absichern
+* Association und Mosaic Plots
+    * Genese derer mit `{flexplot}`
+    * Guessing von Cramer's V anhand der Plots
+]]
