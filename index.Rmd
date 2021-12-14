@@ -124,6 +124,7 @@ use_editable(expires = 1)
 
 ---
 ## Was habe ich heute vor?
+* Evaluation
 * FAQ zu Aufgaben und Videos
 * Vertiefende Elaboration
     * Beispiele
@@ -149,6 +150,11 @@ use_editable(expires = 1)
 ]
 
 ---
+## Evaluation
+.em13[
+Bitte evaluieren Sie diese Veranstaltung unter dem Link https://bit.ly/merk019 - der Token lautet __Zutpibecur__]
+
+---
 class: hide_logo
 
 ## Ihre Fragen zu Video und Aufgaben
@@ -168,11 +174,11 @@ image(qrencode_raster("https://bit.ly/merk015"),
 class: hide_logo 
 ## Gemeinsame Aufgabe: Palmer Penguins <img src="https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png" width="150" align="right">
 
-> Forschungsfrage: Wie artenspezifisch (Species: `Adelie`, `Chinstrap`, `Gentoo`), ist die Besiedelung der Inseln `Biscoe`, `Dream` und `Torgersen`? 
+> Forschungsfrage: Wie artenspezifisch (Species: `Adelie`, `Chinstrap`, `Gentoo`) ist die Besiedelung der Inseln `Biscoe`, `Dream` und `Torgersen`? 
 
 * Skizzieren Sie auf einem Schmierzettel 
-    * eine Kreuztabelle aus `Species vs. Island` die für eine hochgradig artenspezifische Inselbesiedelung (a.k.a. großes Cramér's V) spricht und
-    * eine Kreuztabelle aus `Species vs. Island` die für eine absolut artenunspezifische Inselbesiedelung (a.k.a. Cramér's V = 0) spricht. Berücksichtigen Sie dabei die folgenden »Randverteilungen«:
+    * eine fiktive Kreuztabelle aus `Species vs. Island` die für eine hochgradig artenspezifische Inselbesiedelung (a.k.a. großes Cramér's V) spricht und
+    * eine fiktive Kreuztabelle aus `Species vs. Island` die für eine absolut artenunspezifische Inselbesiedelung spricht. Berücksichtigen Sie dabei die folgenden »Randverteilungen«:
 ```{r, warning=FALSE, message=FALSE}
 library(palmerpenguins)
 table(penguins$island)
@@ -231,7 +237,7 @@ Radelet, M. L., and Pierce, G. L. (1991). Choosing those who will die: Race and 
 # Predicting the Future
 Wir werden in einem Experiment testen, inwiefern Sie in der Lage sind die Zukunft vorherzusagen (Ergebnis eines Münzwurfs) 😉.
 
-> Forschungsfrage: Können Studierende des Studiengangs Biodiversität und Umwelt vorhersagen ob eine Münze als nächstes Kopf oder Zahl zeigt?
+> Forschungsfrage: Können Studierende des Studiengangs Biodiversität und Umwelt vorhersagen, ob eine Münze als nächstes Kopf oder Zahl zeigt?
 
 
 .can-edit[
@@ -250,11 +256,11 @@ knitr::include_url("https://jasp-stats.org/wp-content/uploads/2020/11/Statistica
 
 
 ---
-## Offene Arbeitsaufträge
+### Offene Arbeitsaufträge
 
 .pull-left[
-### Non-<i class="fab fa-r-project"></i>-Users
-.em08[
+#### Non-<i class="fab fa-r-project"></i>-Users
+.em07[
 * Laden Sie den Querschnittsdatensatz, das Codebook und den Fragebogen des [<i class="fas fa-external-link-alt"></i> ALLBUS 2018 (Vollversion, aber nicht Kumulation)](https://www.gesis.org/allbus/download/download-querschnitte) herunter (Registrierung notwendig, wir werden den Datensatz aber noch oft nutzen)
 * Untersuchen Sie selbstgewählte Fragestellungen zum Binomial- und $\chi^2$-Test indem
     * Sie Effektstärken berechnen und diese inferenzstatistisch absichern
@@ -263,8 +269,8 @@ knitr::include_url("https://jasp-stats.org/wp-content/uploads/2020/11/Statistica
 * Klicken Sie auf "Visually Guessing Cramér's V" in moodle und üben Sie V aus den Plots abzuschätzen]]
 
 .pull-right[
-### <i class="fab fa-r-project"></i>-Users
-.em08[
+#### <i class="fab fa-r-project"></i>-Users
+.em07[
 * Laden Sie den Querschnittsdatensatz, das Codebook und den Fragebogen des [<i class="fas fa-external-link-alt"></i> ALLBUS 2018 (Vollversion, aber nicht Kumulation)](https://www.gesis.org/allbus/download/download-querschnitte) herunter (Registrierung notwendig, wir werden den Datensatz aber noch oft nutzen)
 * Üben Sie das Erstellen von Kreuz- und Pivottabellen mittels `dplyr::group_by()` und `dplyr::summarise()` zunächst in [diesem interaktiven Tutorial](https://rstudio.cloud/learn/primers/2.3)
 * Untersuchen Sie selbstgewählte Fragestellungen zum Binomial- und $\chi^2$-Test indem
@@ -273,3 +279,7 @@ knitr::include_url("https://jasp-stats.org/wp-content/uploads/2020/11/Statistica
     * Genese derer mit `{flexplot}`
     * Guessing von Cramer's V anhand der Plots
 ]]
+
+#### <i class="fa fa-brain"></i>-Powerusers 🤪
+.em07[
+* Vertiefen Sie Ihr Verständnis des Bayes Factors in dem Sie diesen [Blog Post](https://jasp-stats.org/2018/11/20/an-introduction-to-jeffreyss-bayes-factors-with-the-sumstats-module-part-1/) durcharbeiten und mir Fragen dazu stellen.]
